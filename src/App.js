@@ -6,8 +6,9 @@ import { fetchData } from './actions/303';
 
 class App extends Component {
   componentDidMount() {
-
+    this.props.fetchData();
   }
+
   render() {
     return (
       <div className="App">
