@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
+import { fetchData } from './actions/303';
 
 class App extends Component {
+  componentDidMount() {
+
+  }
   render() {
     return (
       <div className="App">
@@ -18,4 +23,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+ ...state
+})
+
+const mapDispatchToProps = dispatch => ({
+ fetchData: () => dispatch(fetchData())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
